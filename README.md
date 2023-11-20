@@ -24,6 +24,7 @@ This repository contains the backend code for E-commerce application using node.
 - **Sending emails:** sending emails to reset password using mailgun and nodemailer npm package
 - **Relational Database:** making relations in database between users,orders,carts and products using sequelize
 - **Validation :** validating inputs using express-validator
+- **Model-View-Controller :** This appliction built in MVC design pattern
 
 ## Technologies
 
@@ -41,6 +42,7 @@ This repository contains the backend code for E-commerce application using node.
 - pdfkit
 - bcryptjs
 - express-validator
+- MVC design pattern
 
 ### Prerequisites
 
