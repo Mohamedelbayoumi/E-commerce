@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../includes/head") %>
+<link rel="stylesheet" href="/css/forms.css">
+<link rel="stylesheet" href="/css/auth.css">
+
+</head>
+
+<body>
+    <%- include('../includes/navigation') %>
+    <main>
+            <% if (errorMessage) { %>
+                <div class="user-message user-message--error">
+                <%= errorMessage  %>
+                </div>
+            <% } %>
+        <form class="login-form" action="/login" method="post" novalidate>
+            <div class="form-control">
+                <label for="email">E-mail</label>
+                <input 
+                class="<%= validationError.email ? 'invalid' : '' %>"
+                type="email" 
+                id="email" 
+                name="email" 
+                value="<%= oldInput.email %>">
+            </div>
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input
+                class="<%= validationError.password ? 'invalid' : '' %>" 
+                type="password" 
+                name="password" 
+                id="password" 
+                value="<%= oldInput.password %>">
+                <input type="hidden" name="CSRFToken" value="<%= csrfToken %>">
+            </div>
+            <button class="btn" type="submit">Login</button>
+        </form>
+        <div class="centered">
+            <a href="/reset" class="btn">Reset Password</a>
+
+        </div>
+
+    </main>
+    
+</body>
+</html>

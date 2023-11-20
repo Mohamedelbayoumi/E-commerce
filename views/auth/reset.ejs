@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../includes/head") %>
+<link rel="stylesheet" href="/css/forms.css">
+<link rel="stylesheet" href="/css/auth.css">
+
+</head>
+
+<body>
+    <%- include('../includes/navigation') %>
+    <main>
+            <% if (errorMessage) { %>
+                <div class="user-message user-message--error">
+                <%= errorMessage  %>
+                </div>
+            <% } %>
+        <form class="login-form" action="/reset" method="post">
+            <div class="form-control">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <input type="hidden" name="CSRFToken" value="<%= csrfToken %>">
+            <button class="btn" type="submit">Reset Password</button>
+        </form>
+    </main>
+    
+</body>
+</html>

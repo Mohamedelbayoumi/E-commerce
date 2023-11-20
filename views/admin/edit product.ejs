@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../includes/head') %>
+    <link rel="stylesheet" href="/css/product.css">
+    <link rel="stylesheet" href="/css/forms.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation') %>
+    <main>
+        <% if (errorMessage) { %>
+            <div class="user-message user-message--error">
+                <%= errorMessage %>
+            </div>
+        <% } %>    
+        <form class="product-form" action="/admin/<%= editing ? "edit-product" : "add-product"%>" method="post" enctype="multipart/form-data" >
+            <div class="form-control">
+                <label for="title">Title</label>
+                <input 
+                class="<%= validationError.productName ? 'invalid' : '' %>"
+                type="text" 
+                name="productName" 
+                id="title" 
+                value="<%= editing || errorMessage ? product.title : '' %>">
+            </div>
+            <!-- <div class="form-control">
+                <label for="imageURL">Image URL</label>
+                <input 
+                class="<%#= validationError.imageURL ? 'invalid' : '' %>"
+                type="text" 
+                name="imageURL" 
+                id="imageURL" 
+                value="<%#= editing || errorMessage ? product.imageURL : '' %>">
+            </div> -->
+            <div class="form-control">
+                <label for="image">Image</label>
+                <input type="file" name="image" id="image" >
+            </div>
+            <div class="form-control">
+                <label for="price">Price</label>
+                <input 
+                class="<%= validationError.price ? 'invalid' : '' %>"
+                type="number" 
+                name="price" 
+                id="price" 
+                step="0.01" 
+                value="<%= editing || errorMessage ? product.price : '' %>">
+            </div>
+            <div class="form-control">
+                <label for="description">Description</label>
+                <textarea 
+                class="<%= validationError.description ? 'invalid' : '' %>"
+                name="description" 
+                id="description" 
+                rows="5"><%= editing || errorMessage ? product.description : '' %></textarea>                
+            </div>
+            <% if(editing) {%>
+                <input type="hidden" value="<%= product.id%>" name="productID">
+             <% } %>   
+             <input type="hidden" name="CSRFToken" value="<%= csrfToken %>">
+             <button class="btn" type="submit"><%= editing ? 'Edit Product' : 'Add Product' %></button>
+        </form>
+    </main>
+</body>
+
+</html>

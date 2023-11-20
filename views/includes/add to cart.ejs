@@ -1,0 +1,7 @@
+<% if (isAuthenicated) { %>
+    <form action="/cart/<%= product.id %>" method="post">
+        <input type="hidden" name="CSRFToken" value="<%= csrfToken %>">
+        <button class="btn" type="submit"> Add to cart</button>
+        <input type="hidden" name = "product" id="product" value = "<%= product.id %>">
+    </form>
+<% } %>
