@@ -25,7 +25,7 @@ This repository contains the backend code for our E-commerce application. The ba
 
 ## Technologies
 
-- **Node.js
+- Node.js
 - **Express.js
 - **Mysql
 - **Sequelize
