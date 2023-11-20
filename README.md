@@ -11,7 +11,7 @@ This repository contains the backend code for E-commerce application using node.
 - [Usage](#usage)
 - [Technologies](#Technologies)
 - [Prerequisites](#Prerequisites)
-- [How to install](#How_to_install)
+- [How_to_install](#How_to_install)
 
 ## Features
 
@@ -47,7 +47,7 @@ This repository contains the backend code for E-commerce application using node.
 - mysql installed and running.
 - [Node.js](https://nodejs.org/) installed.
 
-### How to install
+### How_to_install
 
 - Clone the repository:
 
