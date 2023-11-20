@@ -11,7 +11,7 @@ This repository contains the backend code for E-commerce application using node.
 - [Usage](#usage)
 - [Technologies](#Technologies)
 - [Prerequisites](#Prerequisites)
-- [ Howtoinstall](# Howtoinstall)
+- [Howto install](#Howtoinstall)
 
 ## Features
 
