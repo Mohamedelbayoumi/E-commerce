@@ -56,3 +56,5 @@ This repository contains the backend code for E-commerce application using node.
    ```bash
    git clone https://github.com/your-username/E-commerce.git
    cd E-commerce
+   npm install
+   node app.js
